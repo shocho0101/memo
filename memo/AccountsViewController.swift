@@ -27,7 +27,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData() //tableviewが表示されたときにtableviewを更新して最新のリストにする
+        //tableviewが表示されたときにtableviewを更新して最新のリストにする
+        accountNameArray = saveData.object(forKey: "accountNameArray") as? [String] ?? []
+        tableView.reloadData() 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
